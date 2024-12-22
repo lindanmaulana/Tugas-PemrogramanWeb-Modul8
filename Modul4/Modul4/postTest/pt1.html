@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hitung Gaji</title>
+    <style>
+      body{
+        box-sizing: border-box;
+        font-size: larger;
+      }
+      thead td {
+        text-align: center;
+        font-weight: bold;
+      }
+      tbody td {
+        width: 50%;
+        height: 30px;
+      }
+      tbody input, tbody select {
+        height: 30px;
+      }
+      button {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body class=".awal">
+    <form name="form1">
+      <table border="1">
+        <thead>
+          <tr>
+            <td colspan="2">PERHITUNGAN GAJI</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><label for="gol">Golongan</label></td>
+            <td>
+              <select style="width: 50px;" name="gol">
+                <option value="I">I</option>
+                <option value="II">II</option>
+                <option value="III">III</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="anak">Jumlah Anak</label></td>
+            <td><input style="width: 80px;" type="text" name="anak" size="10" maxlength="10" id="anak"></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <button type="button" name="hitung" value="Hitung" onclick="hit()">Hitung</button>
+              <button type="reset" name="Batal" value="Cancel">Cancel</button>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="gapok">Gaji Pokok</label></td>
+            <td><input type="number" name="gapok" id="gapok" readonly></td>
+          </tr>
+          <tr>
+            <td><label for="tunjangan">Tunjangan</label></td>
+            <td><input type="number" name="tunjangan" id="tunjangan" readonly></td>
+          </tr>
+          <tr>
+            <td><label for="gaji">Gaji Bersih</label></td>
+            <td><input type="number" name="gaji" id="gaji" readonly></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+    <script src="js/pt1.js"></script>
+  </body>
+</html>

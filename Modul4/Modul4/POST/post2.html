@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      max-width: 1020px;
+      height: 100vh;
+      display: grid;
+      grid-template-columns: auto auto;
+      margin: auto;
+    }
+
+    .wrapper {
+      display: flex;
+      align-items: center;
+     justify-content: space-around;
+      gap: 10px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <form onsubmit="handleTampilkan(event)">
+          <table border="1">
+            <thead>
+              <tr>
+                <th colspan="2">Data Penjualan Barang</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><label for="kode">Kode</label></td>
+                <td>
+                  <select
+                    name="kode"
+                    id="kode"
+                    onchange="handleKodeBarang(event)"
+                  >
+                    <option value="">--Pilih Salah Satu--</option>
+                    <option value="B001">B001</option>
+                    <option value="B002">B002</option>
+                    <option value="B003">B003</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="jumlahBeli">Jumlah beli</label>
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    name="namaBarang"
+                    id="jumlahBeli"
+                    oninput="handleJumlahBeli(event)"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label for="namaBarang">nama Barang</label></td>
+                <td><input type="text" name="namaBarang" id="namaBarang" /></td>
+              </tr>
+              <tr>
+                <td><label for="hargaBarang">Harga</label></td>
+                <td>
+                  <input type="number" name="hargaBarang" id="hargaBarang" />
+                </td>
+              </tr>
+              <tr>
+                <td><label for="jumlahBayar">Jumlah Bayar</label></td>
+                <td>
+                  <input type="number" name="jumlahBayar" id="jumlahBayar" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="potongan">Potongan</label
+                  ><input type="number" name="potongan" id="potongan" />
+                  <span>%</span>
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    name="jumlahPotongan"
+                    id="jumlahPotongan"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="totalBayar">Total Bayar</label>
+                </td>
+                <td>
+                  <input type="number" name="totalBayar" id="totalBayar" />
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" style="text-align: center;">
+                  <button type="submit">TAMPILKAN</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+        <div class="notaPenjualan"></div>
+      </div>
+    </div>
+
+    <script src="./js/post2.js"></script>
+  </body>
+</html>

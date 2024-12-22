@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soal tugas 1</title>
+    <style>
+      .container-table {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .table-kamar {
+        width: 100%;
+        text-align: center;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+
+      .table-fasilitas {
+        width: 100%;
+        text-align: center;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+
+      .table-pesanan {
+        width: 100%;
+        text-align: center;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-table">
+      <!-- Data Kamar -->
+      <table border="1" class="table-kamar">
+        <thead>
+          <tr>
+            <th>id kamar</th>
+            <th>Gambar Ruangan</th>
+            <th>Jenis Kamar</th>
+            <th>Harga</th>
+            <th>Fasilitas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>
+              <img
+                src="../praktikum/assets/images/kamar12C.jpeg"
+                alt="Kamar 12C"
+                width="100%"
+                height="200"
+              />
+            </td>
+            <td>Premium</td>
+            <td>6.000.000</td>
+            <td>Tv, Ac, Kulkas</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>
+              <img
+                src="../praktikum/assets/images/kamar8A.jpg"
+                alt="Kamar 12C"
+                width="100%"
+                height="200"
+              />
+            </td>
+            <td>Semi Premium</td>
+            <td>4.000.000</td>
+            <td>Tv, Ac</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Fasilitas -->
+      <table border="1" class="table-fasilitas">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nama</th>
+            <th>Fasilitas</th>
+            <th>Harga Weekend</th>
+            <th>Harga Weekday</th>
+            <th>Kuota</th>
+            <th>Jam Buka</th>
+            <th>Jam Tutup</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>fsl1</td>
+            <td>Gym</td>
+            <td>130.000</td>
+            <td>200.000</td>
+            <td>4</td>
+            <td>07:00</td>
+            <td>16:00</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>fsl2</td>
+            <td>Kolam Renang</td>
+            <td>230.000</td>
+            <td>300.000</td>
+            <td>2</td>
+            <td>07:00</td>
+            <td>16:00</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Pemesanan -->
+      <table border="1" class="table-pesanan">
+        <thead>
+          <tr>
+            <th rowspan="2">id</th>
+            <th rowspan="2">Tanggal Pesan</th>
+            <th rowspan="2">Pemesan</th>
+            <th rowspan="2">Jenis Kamar</th>
+            <th rowspan="2">Check in</th>
+            <th rowspan="2">Check out</th>
+            <th colspan="2">Fasilitas</th>
+          </tr>
+          <tr>
+            <th>Ya</th>
+            <th>Tidak</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>11-08-2023</td>
+            <td>Dian Ardiansyah</td>
+            <td>Premium</td>
+            <td>08:00</td>
+            <td>07:00</td>
+            <td>✅</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>11-08-2023</td>
+            <td>Adam Adi Nugraha</td>
+            <td>Semi remium</td>
+            <td>07:00</td>
+            <td>07:00</td>
+            <td></td>
+            <td>✅</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

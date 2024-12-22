@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      type="text/javascript"
+      src="../assets/js/jquery-3.7.1.min.js"
+    ></script>
+    <style>
+      .display {
+        display: block;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button id="btn-show">CLICK</button>
+      <img id="image-hero" src="../assets/images/hero.png" alt="" />
+      <img id="image-tornado" src="../assets/images/tornado.jpg" alt="">
+    </div>
+
+    
+    <script type="text/javascript">
+      $("document").ready(() => {
+        $("#btn-show").click(() => {
+          $("img").fadeToggle();
+        });
+      });
+    </script>
+  </body>
+</html>

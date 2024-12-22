@@ -1,0 +1,18 @@
+.linm-hotel {
+  background-image: url("/modul1/praktikum/assets/images/hotel-room.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 50%;
+  height: 140px;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -0.25rem;
+  margin-left: 0;
+}

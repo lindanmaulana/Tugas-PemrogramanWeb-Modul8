@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form onsubmit="handleSubmit(event)">
+      <table>
+        <tbody>
+          <tr>
+            <td><label for="username">Username</label></td>
+            <td>
+              <input
+                type="text"
+                name="username"
+                id="username"
+                placeholder="Enter username"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="password">Password</label></td>
+            <td>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Enter password"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><button type="submit">Login</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

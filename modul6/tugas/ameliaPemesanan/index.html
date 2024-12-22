@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Pemesanan</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      type="text/javascript"
+      src="../../assets/js/jquery-3.7.1.min.js"
+    ></script>
+
+    <style>
+      :root {
+        --background-color: #f9fafb;
+        --form-color: #e2e8f0;
+        --button-color: #1e40af;
+        --text-color: #475569;
+        --input-focus: #2563eb;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .reservation-form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 800px;
+      }
+
+      .reservation-form {
+        background-color: var(--form-color);
+        padding: 20px;
+        border-radius: 8px;
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .reservation-form h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: var(--button-color);
+      }
+
+      .reservation-form table {
+        width: 100%;
+        border-spacing: 12px;
+      }
+
+      .reservation-form label {
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .reservation-form input,
+      .reservation-form select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #cbd5e1;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      .reservation-form input:focus,
+      .reservation-form select:focus {
+        border-color: var(--input-focus);
+        outline: none;
+      }
+
+      .radio-group {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .radio-group label {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 14px;
+      }
+
+      .action-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 20px;
+      }
+
+      .action-buttons button {
+        background-color: var(--button-color);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 16px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .action-buttons button:hover {
+        background-color: #1d4ed8;
+      }
+
+      .summary {
+        margin-top: 20px;
+        padding: 12px;
+        background-color: #f1f5f9;
+        border-radius: 4px;
+        font-size: 14px;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reservation-form-container">
+      <form class="reservation-form" id="form-pemesanan">
+        <h2>Form Pemesanan Hotel</h2>
+        <table>
+          <tr>
+            <td><label for="reservationId">Id Pemesanan:</label></td>
+            <td>
+              <input type="number" id="reservationId" name="idPemesanan" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="guestName">Nama Pemesan:</label></td>
+            <td><input type="text" id="guestName" name="namaPemesan" /></td>
+          </tr>
+          <tr>
+            <td><label for="identityNumber">Nomor Identitas:</label></td>
+            <td>
+              <input type="number" id="identityNumber" name="nomorIdentitas" />
+            </td>
+          </tr>
+          <tr id="identityNumberMessage">
+            <td
+              colspan="2"
+              style="color: red; font-size: 12px; text-align: center"
+            >
+              Isian salah, harus 16 digit
+            </td>
+          </tr>
+          <tr>
+            <td><label for="roomType">Tipe Kamar:</label></td>
+            <td>
+              <select id="roomType" name="tipeKamar">
+                <option value="">--Pilih--</option>
+                <option value="standar">STANDAR</option>
+                <option value="deluxe">DELUXE</option>
+                <option value="family">FAMILY</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Jenis Kelamin:</td>
+            <td>
+              <div class="radio-group">
+                <label>
+                  <input type="radio" name="jenisKelamin" value="Laki-Laki" />
+                  Laki-Laki
+                </label>
+                <label>
+                  <input type="radio" name="jenisKelamin" value="Perempuan" />
+                  Perempuan
+                </label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="roomPrice">Harga:</label></td>
+            <td>
+              <input type="number" id="roomPrice" name="harga" readonly />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="reservationDate">Tanggal Pesan:</label></td>
+            <td>
+              <input type="date" id="reservationDate" name="tanggalPesan" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="stayDuration">Durasi Menginap:</label></td>
+            <td>
+              <input
+                type="number"
+                id="stayDuration"
+                name="durasiMenginap"
+                min="1"
+              />
+              Hari
+            </td>
+          </tr>
+          <tr>
+            <td><label for="breakfastIncluded">Termasuk Breakfast:</label></td>
+            <td>
+              <input type="checkbox" id="breakfastIncluded" name="breakfast" />
+              Ya
+            </td>
+          </tr>
+          <tr>
+            <td><label for="totalPayment">Total Bayar:</label></td>
+            <td>
+              <input type="text" id="totalPayment" name="totalBayar" readonly />
+            </td>
+          </tr>
+        </table>
+        <div class="action-buttons">
+          <button type="submit">Simpan</button>
+          <button type="reset">Batal</button>
+        </div>
+        <div class="summary"></div>
+      </form>
+    </div>
+
+    <script type="text/javascript">
+      $(document).ready(() => {
+        let dataPesanan = {
+          idPemesanan: null,
+          namaPemesan: "",
+          nomorIdentitas: 0,
+          jenisKelamin: "",
+          tipeKamar: "",
+          durasiPenginapan: 0,
+          diskon: 0,
+          hargaAwal: 0,
+          totalBayar: 0,
+          hargaKamar: 0,
+          tanggalPesan: "",
+          breakfast: false,
+        };
+
+        const dataKamar = [
+          { tipeKamar: "standar", harga: 250000 },
+          { tipeKamar: "deluxe", harga: 300000 },
+          { tipeKamar: "family", harga: 350000 },
+        ];
+
+        const hargaBreakfast = 80000;
+
+        const setTotalBayar = () => {
+          $("#totalPayment").val(dataPesanan.totalBayar);
+        };
+
+        const fungsiDiskon = (harga, durasiMenginap) => {
+          return durasiMenginap > 3 ? (harga * 10) / 100 : 0;
+        };
+
+        const fungsiTotalBayar = (harga, diskon, breakfast) => {
+          return breakfast ? harga + hargaBreakfast - diskon : harga - diskon;
+        };
+
+        const handleFormPemesanan = (e) => {
+          e.preventDefault();
+          const idPemesanan = $("#reservationId").val();
+          const namaPemesan = $("#guestName").val();
+          const jenisKelamin = $("input[name='jenisKelamin']:checked").val();
+          const tanggalPesan = $("#reservationDate").val();
+
+          dataPesanan = {
+            ...dataPesanan,
+            idPemesanan,
+            namaPemesan,
+            jenisKelamin,
+            tanggalPesan,
+          };
+
+          let notaPemesananHotel = `<pre>
+  Nama Pemesan      = ${dataPesanan.namaPemesan}
+  Nomor Identitas   = ${dataPesanan.nomorIdentitas}
+  Jenis Kelamin     = ${dataPesanan.jenisKelamin}
+  Tipe Kamar        = ${dataPesanan.tipeKamar}
+  Durasi Penginapan = ${dataPesanan.durasiPenginapan}
+  ---------------------------------------------------
+  Jumlah bayar      = ${dataPesanan.hargaAwal}
+  Diskon            = ${dataPesanan.diskon}
+  ===================================================
+  Total Bayar       = ${dataPesanan.totalBayar}
+  </pre>`;
+
+          $(".summary").html(
+            `<h1 style="padding-left: 12px;">Nota pemesanan Hotel</h1>${notaPemesananHotel}`
+          );
+
+          setTotalBayar();
+        };
+
+        const handleNomorIdentitas = (e) => {
+          const nomorIdentitas = e.target.value.toString();
+          if (nomorIdentitas.length !== 16) {
+            $("#identityNumberMessage").show();
+          } else {
+            $("#identityNumberMessage").hide();
+          }
+
+          dataPesanan = {
+            ...dataPesanan,
+            nomorIdentitas,
+          };
+
+          setTotalBayar();
+        };
+
+        const handleTipeKamar = () => {
+          const tipeKamar = $("#roomType").val();
+          const kamarPilihan = dataKamar.find(
+            (kamar) => kamar.tipeKamar === tipeKamar
+          );
+
+          dataPesanan = {
+            ...dataPesanan,
+            tipeKamar,
+            hargaAwal: kamarPilihan.harga,
+            totalBayar: kamarPilihan.harga,
+            hargaKamar: kamarPilihan.harga,
+          };
+
+          $("#roomPrice").val(kamarPilihan.harga);
+
+          setTotalBayar();
+        };
+
+        const handleDurasiMenginap = () => {
+          const durasiMenginap = Number($("#stayDuration").val());
+          const diskonPesanan = fungsiDiskon(
+            dataPesanan.hargaKamar,
+            durasiMenginap
+          );
+          const totalBayar = fungsiTotalBayar(
+            dataPesanan.hargaKamar,
+            diskonPesanan,
+            dataPesanan.breakfast
+          );
+
+          dataPesanan = {
+            ...dataPesanan,
+            durasiPenginapan: durasiMenginap,
+            totalBayar,
+            diskon: diskonPesanan,
+          };
+
+          setTotalBayar();
+        };
+
+        const handleBreakfast = () => {
+          const breakfast = $("#breakfastIncluded").is(":checked");
+          const adjustment = breakfast ? hargaBreakfast : -hargaBreakfast;
+
+          dataPesanan = {
+            ...dataPesanan,
+            breakfast,
+            totalBayar: dataPesanan.totalBayar + adjustment,
+          };
+
+          setTotalBayar();
+        };
+
+        $("#form-pemesanan").on("submit", handleFormPemesanan);
+        $("#identityNumber").on("input", handleNomorIdentitas);
+        $("#identityNumberMessage").hide();
+        $("#roomType").on("change", handleTipeKamar);
+        $("#stayDuration").on("input", handleDurasiMenginap);
+        $("#breakfastIncluded").on("change", handleBreakfast);
+      });
+    </script>
+  </body>
+</html>

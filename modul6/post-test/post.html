@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="i8">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.6">
+    <title>jQuery Manipulasi</title>
+    <!-- Menyertakan library jQuery -->
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            font-size: 20px;
+            color: blue;
+            margin-bottom: 20px;
+        }
+
+        #fakultas input {
+            padding: 5px;
+            font-size: 10px;
+            width: 200px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005663;
+        }
+    </style>
+</head>
+<body>
+    <div id="fakultas">FKOM</div>
+    <input type="text" id="uniku" value="UNIKU">
+    <br>
+    <button id="changeContent">Ubah Konten</button>
+
+    <script>
+        // jQuery Code
+        $(document).ready(function () {
+            // Variabel untuk melacak status konten
+            let isoriginal = true;
+            $("#changeContent").click(function () {
+                if (isoriginal) {
+                    // Mengubah ke konten baru
+                    $("#fakultas").text("Fakultas Ilmu Komputer").css("color", "yellow");
+                    $("#uniku").val("Universitas Kuningan").css("border", "2px solid yellow");
+                } else {
+                    // Mengembalikan ke konten asli
+                    $("#fakultas").text("FKOM").css("color", "blue");
+                    $("#uniku").val("UNIKU").css("border", "2px solid black");
+                }
+                // Ubah status
+                isoriginal = !isoriginal;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulasi DOM dengan jquery</title>
+    <script type="text/javascript" src="../assets/js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1>Manipulasi DOM dengan jquery</h1>
+
+    <button id="tambah">Tambah Data</button>
+    <button id="ubah">Ubah Data Pertama</button>
+    <button id="hapus">Hapus Data</button>
+
+    <div id="output">
+        <div class="item">Data 1</div>
+        <div class="item">Data 2</div>
+        <div class="item">Data 3</div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(() => {
+            // Menambahkan elemen
+            $("#tambah").on("click", () => {
+                $("#output").append("<div class='item'>Data Baru </div>")
+            })
+
+            // Mengubah elemen
+            $("#ubah").on("click", () => {
+                $("#output .item:first").text("Data Pertama Diubah")
+            })
+
+            // Menghapus elemen terakhir
+            $("#hapus").on("click", () => {
+                $("#output .item:last").remove()
+            })
+        })
+    </script>
+</body>
+</html>

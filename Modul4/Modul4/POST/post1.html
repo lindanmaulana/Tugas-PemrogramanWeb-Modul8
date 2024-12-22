@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      table thead tr th {
+        padding: 10px 20px;
+      }
+
+      table tbody tr td {
+        width: 150px;
+        height: 34px;
+      }
+
+      table tbody tr td input, select {
+        width: 100%;
+        height: 100%;
+      }
+
+      table tbody tr td button {
+        padding: 3px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form onsubmit="hitungGaji(event)">
+      <table border="1" >
+        <thead>
+          <tr>
+            <th colspan="2">PERHITUNGAN GAJI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <label for="gol">Golongan</label>
+            </td>
+            <td>
+              <select name="gol" id="gol">
+                <option value="I">I</option>
+                <option value="II">II</option>
+                <option value="III">III</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="anak">Jumlah Anak</label></td>
+            <td>
+              <input
+                type="text"
+                maxlength="10"
+                size="10"
+                name="anak"
+                id="anak"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <button type="submit">Hitung</button>
+              <button type="reset">Cancel</button>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="gapok">Gaji Pokok</label></td>
+            <td><input type="text" name="gapok" id="gapok" size="10" readonly /></td>
+          </tr>
+          <tr>
+            <td><label for="gapok">Tunjangan</label></td>
+            <td>
+              <input type="text" name="tunjangan" id="tunjangan" size="10" readonly />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="gaji">Gaji Bersih</label></td>
+            <td><input type="text" name="gaji" id="gaji" size="10" readonly /></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+
+    <script src="./js/post1.js"></script>
+  </body>
+</html>

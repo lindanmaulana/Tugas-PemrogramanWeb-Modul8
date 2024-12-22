@@ -1,0 +1,5 @@
+ID: $("#idElement")
+Class: $(".className")
+Tag: $("tagName")
+Atribut: $("[attr='value']")
+Kombinasi: $("div.className#idElement")

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nota Penjualan</title>
+  </head>
+  <style>
+
+    .container {
+      display: flex;
+      gap: 5px;
+    }
+    thead td {
+      text-align: center;
+      font-weight: bold;
+    }
+    tbody td {
+      width: 50%;
+    }
+    tbody input,
+    tbody select {
+      height: 20px;
+    }
+    .centeredButton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <form name="form1">
+        <table border="1">
+          <thead>
+            <tr>
+              <td colspan="2">Data Penjualan Barang</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><label for="kode">Kode</label></td>
+              <td>
+                <select name="kode" id="kode" onchange="handleSelectOption()">
+                  <option value="">--Pilih Salah Satu--</option>
+                  <option value="B001">B001</option>
+                  <option value="B002">B002</option>
+                  <option value="B003">B003</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="jumlahBeli">Jumlah Beli</label></td>
+              <td>
+                <input
+                  type="number"
+                  name="jumlahBeli"
+                  id="jumlahBeli"
+                  value="0"
+                  onchange="handleJumlahBeli()"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="namaBarang">Nama Barang</label></td>
+              <td>
+                <input type="text" name="namaBarang" id="namaBarang" readonly />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="hargaBarang">Harga</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="hargaBarang"
+                  id="hargaBarang"
+                  readonly
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="jumlahBayar">Jumlah Bayar</label></td>
+              <td>
+                <input
+                  type="number"
+                  name="jumlahBayar"
+                  id="jumlahBayar"
+                  value="0"
+                  readonly
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="potongan">Potongan</label>
+                <input
+                  type="number"
+                  name="potongan"
+                  id="potongan"
+                  style="width: 75px"
+                  readonly
+                />
+                <label>%</label>
+              </td>
+              <td>
+                <input
+                  type="number"
+                  name="bersarPotongan"
+                  id="besarPotongan"
+                  readonly
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="totalBayar">Total Bayar</label></td>
+              <td>
+                <input
+                  type="number"
+                  name="totalBayar"
+                  id="totalBayar"
+                  readonly
+                />
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="centeredButton"
+                style="width: 199%; text-align: center"
+              >
+                <button type="button" onclick="handleClick()">TAMPILKAN</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <div class="nota" id="nota"></div>
+    </div>
+    <script src="js/pt2.js"></script>
+  </body>
+</html>
